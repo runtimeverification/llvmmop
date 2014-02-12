@@ -53,7 +53,7 @@ The 'javamop' script has the following usage:
 Usage) javamop [-v] [-d <target directory>] <specification file or dir>
 
 -v option is verbose mode -d option is used to specify the target directory
-where the resulting aspectj code will be saved. Specification files must have
+where the resulting aspect code will be saved. Specification files must have
 The .mop file extension.
 
 Example) javamop -d examples/FSM/ examples/FSM/HasNext.mop
@@ -73,7 +73,7 @@ The script, 'javamop.bat' has the following usage.
 Usage) javamop.bat [-v] [-d <target directory>] <specification file or dir>
 
 The -v option is used to specify verbose mode. The -d option is used to specify
-the target directory where the resulting aspectj code will be saved.
+the target directory where the resulting aspect code will be saved.
 Specification files must have The .mop file extension.
 
 Example) javamop.bat -d examples\FSM examples\FSM\HasNext.mop

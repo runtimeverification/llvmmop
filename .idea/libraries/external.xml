@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="external">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/external/mysql-connector-java-3.0.9-stable-bin.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/external/jaxb-impl.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/external/commons-collections-3.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

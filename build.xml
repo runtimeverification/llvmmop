@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<project name="javamop" default="jar" basedir=".">
+<project name="llvmmop" default="jar" basedir=".">
         <property name="bin" value="bin" />
         <property name="build" value="build" />
         <property name="lib" value="lib" />
@@ -21,13 +21,15 @@
         </taskdef>
 
         <!-- redefined these if you change the directory names -->
-        <property name="javamop" value="javamop" />
-        <property name="test" value="javamoptestsuite" />
+        <property name="llvmmop" value="llvmmop" />
+        <property name="test" value="llvmmoptestsuite" />
         <property name="javamoprt" value="javamoprt" />
 
         <target name="init">
                 <mkdir dir="${build}" />
                 <mkdir dir="${lib}" />
+		<javacc target="src/llvmmop/parser/main_parser/llvmmop.jj" javacchome="lib/external" />
+		<javacc target="src/llvmmop/parser/aspect_parser/aspect.jj" javacchome="lib/external" />
         </target>
 
         <target name="clean">
@@ -40,6 +42,26 @@
                                 <include name="${test}.jar" />
                         </fileset>
                 </delete>
+    <delete verbose="true">
+       <fileset dir="src/llvmmop/parser/main_parser">
+		<include name="LLVMMOPParser.java" />
+		<include name="LLVMMOPParserConstants.java" />
+		<include name="LLVMMOPParserTokenManager.java" />
+		<include name="TokenMgrError.java" />
+		<include name="JavaCharStream.java" />
+		<include name="SimpleCharStream.java" />
+		<include name="ParseException.java" />
+	</fileset>
+       <fileset dir="src/llvmmop/parser/aspect_parser">
+		<include name="AspectParser.java" />
+		<include name="AspectParserConstants.java" />
+		<include name="AspectParserTokenManager.java" />
+		<include name="TokenMgrError.java" />
+		<include name="JavaCharStream.java" />
+		<include name="SimpleCharStream.java" />
+		<include name="ParseException.java" />
+	</fileset>
+   </delete>
         </target>
 
         <target name="compile" depends="init">
@@ -73,6 +95,6 @@
         </target>
 
         <!---   
-        <target name="jar" depends="javamop, test, plugins, logicrepository" />
+        <target name="jar" depends="llvmmop, test, plugins, logicrepository" />
         -->
 </project>
